@@ -1,0 +1,24 @@
+#include <iostream>
+
+double calculateAverage(double transactions[], int size) 
+{
+    double sum = 0;
+    int i = 0;
+
+    while(i < size){
+        sum += transactions[i];
+        i++;
+    }
+    auto average = sum/size;
+
+    return average;
+}
+
+int main()
+{
+    int size = 5;
+    double transactions[5] = {50.0, -20.0, 100.0, -50.0, 30.0};
+    double average = calculateAverage(transactions, size);
+    std::cout << "The average transaction value is: $" << average;
+    return 0;
+}
