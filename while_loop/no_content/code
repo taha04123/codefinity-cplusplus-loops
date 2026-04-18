@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+std::string fixId(const std::string& corrupted_id)
+{
+    std::string fixed_id = "";
+    int index = 0;
+
+    while(index < corrupted_id.length()){
+        if (corrupted_id[index] == '!'){
+            index++;
+            continue;
+        }
+        fixed_id += corrupted_id[index];
+        index++;
+    }
+
+    return fixed_id;
+}
+
+int main()
+{
+    std::string corrupted_id = "!!I!D: 7f!3!!b!92!d!!4-!!!!a!b!c!!1!!-5!!!6a7-9!!d!2f!!";
+    std::string fixed_id = fixId(corrupted_id);
+    std::cout << fixed_id;
+    return 0;
+}
